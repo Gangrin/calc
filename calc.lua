@@ -15,7 +15,8 @@ function calc(a)
   elseif type(divi) == "number" and divi > 1 then
     res = divi
   else
-    print("No way, fucker!")
+    print("ERROR")
+    return(res)
   end
 
   w = (res-1)
@@ -25,19 +26,21 @@ function calc(a)
   y = string.sub(a, e)
 
   all = 0
-
-  if type(sum) == "number" and sum > 1 then
-    all = (x+y)
-  elseif type(sub) == "number" and sub > 1 then
-    all = (x-y)
-  elseif type(multi) == "number" and multi > 1 then
-    all = (x*y)
-  elseif type(divi) == "number" and divi > 1 then
-    all = (x/y)
+  if type(x) == "string" or type(y) == "string" then
+    print("ERROR")
   else
-    print("No way, fucker!")
+      if type(sum) == "number" and sum > 1 then
+        all = (x+y)
+      elseif type(sub) == "number" and sub > 1 then
+        all = (x-y)
+      elseif type(multi) == "number" and multi > 1 then
+        all = (x*y)
+      elseif type(divi) == "number" and divi > 1 then
+        all = (x/y)
+      else
+        print("No way, fucker!")
+      end
   end
-
   print(all)
 end
 
